@@ -7,7 +7,7 @@ let s:HTTP = s:V.import('Web.HTTP')
 let s:Job = s:V.import('System.Job')
 
 function webpage#open(...) abort
-  const cmd = ['w3m', '-dump', s:get_source_url(a:000)]
+  const cmd = ['w3m', '-O', 'UTF-8', '-dump', s:get_source_url(a:000)]
   echo 'vim-webpage: loading...'
 
   call s:Job.start(cmd, #{
